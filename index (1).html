@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANMAY MOD�&nbsp;️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* General body styling with background image */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/20241117_180248.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism effect for the content */
+        .content-wrapper {
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Neon-glow title */
+        h1 {
+            font-size: 2.5rem;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            margin-bottom: 20px;
+        }
+
+        /* Input fields styling */
+        input, button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        input {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        button {
+            background: linear-gradient(90deg, #00ff00, #0077ff);
+            color: #000;
+            box-shadow: 0 0 15px #00ff00;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00ff00;
+        }
+
+        /* Result Section */
+        #result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* Telegram link */
+        .telegram-link {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Offline message styling */
+        #offlineMessage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Offline Notification -->
+    <div id="offlineMessage">You are offline. Please connect to the internet to access this website.</div>
+
+    <!-- Login Page -->
+    <div class="content-wrapper" id="loginPage">
+        <h1>TANMAY MOD�&nbsp;️</h1>
+        <div>
+            <input type="text" id="username" placeholder="Enter Username" required="">
+            <input type="password" id="password" placeholder="Enter Password" required="">
+            <button onclick="login()">LOGIN</button>
+        </div>
+    </div>
+
+    <!-- Hack Page -->
+    <div class="content-wrapper" id="hackPage" style="display:none;">
+        <h1>PREDICT RESULTS</h1>
+        <div>
+            <input type="number" id="periodNo" placeholder="Period Number" required="">
+            <button onclick="predict()">Predict</button>
+        </div>
+        <div id="result"></div>
+        <a href="https://t.me/+e9N_uJyCWjBjOTll" class="telegram-link" target="_blank">JOIN US ON TELEGRAM</a>
+        <p>TELEGRAM CONTACT@NOTIMEPASS3</p>
+    </div>
+
+    <script>
+        // Prevent offline access by redirecting offline users
+        function preventOfflineAccess() {
+            if (!navigator.onLine) {
+                alert("You are offline. Please connect to the internet to access this website.");
+                window.location.href = "about:blank"; // Redirect to a blank page
+            }
+        }
+
+        // Run offline prevention on page load and whenever connectivity changes
+        window.addEventListener('load', preventOfflineAccess);
+        window.addEventListener('offline', preventOfflineAccess);
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'SATYAM' && password === 'BABU') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('hackPage').style.display = 'block';
+            } else {
+                alert('Invalid Credentials!');
+            }
+        }
+
+        function predict() {
+            const periodNo = document.getElementById('periodNo').value;
+
+            if (!periodNo) {
+                alert('Please enter a valid period number');
+                return;
+            }
+
+            const lastDigit = periodNo % 10;
+            let result;
+
+            if ([0, 2, 4].includes(lastDigit)) {
+                result = "(0,2,4) SMALL, 🔴";
+            } else if ([5, 7, 9].includes(lastDigit)) {
+                result = "(5,7,9) BIG 🟢";
+            } else if ([1, 3].includes(lastDigit)) {
+                result = "(1,3) SMALL 🟢";
+            } else if ([6, 8].includes(lastDigit)) {
+                result = "(6,8) BIG 🔴";
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = result;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+
+
+</body></html>
